@@ -1,0 +1,380 @@
+<section class="slider">
+  <ul class="slides-container">
+    <li style="background-image: url('/assets/public/images/slider/01.jpg')">
+      <div class="container">
+        <h2>A Mais Um é uma rede colaborativa <br>  que quer reunir pessoas e empresas  <br> para <strong> mudar o mundo !</strong></h2>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<section class="good" data-scroll-index="3" >
+  <div class="header fixme">
+    <div class="container">
+      <h2 class="title">Faça o Bem</h2>
+    </div>
+  </div>
+  <div class="container">
+    <div class="items">
+      <div data-tab="1" class="item"><img src="/assets/public/images/icons/1.png" alt="">
+        <h4>DIVULGUE</h4><span>as ações da sua ONG na rede</span>
+      </div>
+      <div data-tab="2" class="item"><img src="/assets/public/images/icons/2.png" alt="">
+        <h4>CONVOQUE</h4><span>voluntários com a nossa ajuda</span>
+      </div>
+      <div data-tab="3" class="item"><img src="/assets/public/images/icons/3.png" alt="">
+        <h4>ESPALHE</h4><span>as boas iniciativas pela rede</span>
+      </div>
+      <div data-tab="4" class="item"><img src="/assets/public/images/icons/4.png" alt="">
+        <h4>APOIE</h4><span>uma causa participando da rede</span>
+      </div>
+    </div>
+  </div>
+  <div class="item-info" id="tabdata">
+    <div class="container">
+      <div data-tab-index="1" class="contents">
+        <h2>Divulgue as ações de sua ONG na rede</h2>
+        <p>Sua ONG tem um projeto inspirador e gostaria de mais apoio? Patrocínio? Doações? Voluntariado?</p>
+        <p>Explique, mostre fotos, vídeo, divulgue o seu projeto ou a ONG que você apoia para a rede Mais Um, queremos ajudar a espalhar as ações do bem. Nosso objetivo é incentivar e fomentar ajuda a todos que precisam.</p>
+        <p>Sinta-se a vontade para cadastrar seu projeto, use o formulário abaixo , para ajudarmos a divulgá-lo.</p>
+        <form class="tabform" action="/register/share" method="post" accept-charset="utf8">
+          <?php echo $form->render("security"); ?>
+          <div class="columns">
+            <div class="column">
+              <div class="input-addon">
+                <i class="fa fa-user"></i>
+                <input class="required" type="text" name="name" placeholder="Nome Completo">
+              </div>
+              <div class="input-addon">
+                <i class="fa fa-envelope-o"></i>
+                <input class="required" type="text" name="email" placeholder="E-Mail">
+              </div>
+              <div class="input-addon">
+                <i class="fa fa-phone"></i>
+                <input class="required" type="text" name="phone" placeholder="Telefone">
+              </div>
+              <div class="input-addon">
+                <i class="fa fa-quote-left"></i>
+                <input type="text" name="title" placeholder="Título da Campanha">
+              </div>
+              <div class="input-addon">
+                <i class="fa fa-calendar"></i>
+                <input type="text" name="date" placeholder="Data da Ação" maxlength="10">
+              </div>
+              <div class="input-addon">
+                <i class="fa fa-file-image-o"></i>
+                <input type="file" name="file" >
+              </div>
+              <div class="input-addon">
+                <i class="fa fa-pencil"></i>
+                <textarea name="description" placeholder="Descreva a Ação" rows="8"></textarea>
+              </div>
+            </div>
+            <div class="column">
+              <fieldset>
+                <legend><h4><i class="fa fa-key"></i> Escolha a causa de seu interesse: <small>* Multipla escolha</small></h4></legend>
+                <div class="input-group">
+                  <input type="checkbox" id="share-1" name="intrest[]" value="1" />
+                  <label for="share-1" >Proteção Animal</label>
+                </div>
+                <div class="input-group">
+                  <input type="checkbox" id="share-2" name="intrest[]" value="2" />
+                  <label for="share-2" >Meio Ambiente</label>
+                </div>
+                <div class="input-group">
+                  <input type="checkbox" id="share-3" name="intrest[]" value="3" />
+                  <label for="share-3" >Saúde</label>
+                </div>
+                <div class="input-group">
+                  <input type="checkbox" id="share-4" name="intrest[]" value="4" />
+                  <label for="share-4" >Portadores de Necessidades Especiais</label>
+                </div>
+                <div class="input-group">
+                  <input type="checkbox" id="share-5" name="intrest[]" value="5" />
+                  <label for="share-5" >Voluntário</label>
+                </div>
+                <div class="input-group">
+                  <input type="checkbox" id="share-6" name="intrest[]" value="6" />
+                  <label for="share-6" >Programa Social</label>
+                </div>
+                <div class="input-group">
+                  <input type="checkbox" id="share-7" name="intrest[]" value="7" />
+                  <label for="share-7" >Educacional | Profissionalizante</label>
+                </div>
+                <div class="input-group">
+                  <input type="checkbox" id="share-8" name="intrest[]" value="8" />
+                  <label for="share-8" >Outros</label>
+                  <input type="text" name="others" placeholder="Quais outros?" class="hidden" style="padding-left: 10px">
+                </div>
+              </fieldset>
+
+              <h4> <i class="fa fa-share-alt"></i> Redes Sociais da Instituição ou Campanha</h4>
+              <div class="input-addon">
+                <i class="fa fa-facebook"></i>
+                <input type="text" name="facebook" placeholder="Facebook">
+              </div>
+              <div class="input-addon">
+                <i class="fa fa-instagram"></i>
+                <input type="text" name="instagram" placeholder="Instagram">
+              </div>
+          </div>
+          </div>
+          <div class="row text-center">
+            <button type="submit"> Enviar Cadastro </button>
+            <div class="response">
+              <h2></h2><span></span>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div data-tab-index="2" class="contents">
+        <h2>Convoque voluntários com a nossa ajuda</h2>
+        <p>A Mais Um quer aproximar as pessoas dispostas a praticar o bem dos projetos inspiradores.</p>
+        <p>Seu projeto precisa daquela forcinha, aquele  camarada forte para carregar as caixas, ou um ombro amigo para aquela pessoa frágil? Divulgue seu projeto e o que precisa, queremos encontrar pessoas dispostas a ajudar.</p>
+        <p>Cadastre sua <strong>ONG</strong> no formulário abaixo e descreva o que precisa.</p>
+        <form class="tabform" action="/register/invite" method="post" accept-charset="utf8">
+          <?php echo $form->render("security"); ?>
+          <div class="columns">
+            <div class="column">
+              <div class="input-addon">
+                <i class="fa fa-user"></i>
+                <input class="required" type="text" name="name" placeholder="Nome Completo">
+              </div>
+              <div class="input-addon">
+                <i class="fa fa-envelope-o"></i>
+                <input class="required" type="text" name="email" placeholder="E-Mail">
+              </div>
+              <div class="input-addon">
+                <i class="fa fa-phone"></i>
+                <input class="required" type="text" name="phone" placeholder="Telefone">
+              </div>
+              <div class="input-addon">
+                <i class="fa fa-home"></i>
+                <input type="text" name="entity" placeholder="Entidade">
+              </div>
+              <div class="input-addon">
+                <i class="fa fa-map-marker"></i>
+                <input type="text" name="address" placeholder="Endereço Completo">
+              </div>
+              <div class="input-addon">
+                <i class="fa fa-pencil"></i>
+                <textarea name="description" placeholder="Descreva sua necessidade" rows="10"></textarea>
+              </div>
+            </div>
+            <div class="column">
+              <fieldset>
+                <legend><h4><i class="fa fa-key"></i> Escolha a causa de seu interesse: <small>* Multipla escolha</small></h4></legend>
+                <div class="input-group">
+                  <input type="checkbox" id="invite-1" name="intrest[]" value="1" />
+                  <label for="invite-1" >Proteção Animal</label>
+                </div>
+                <div class="input-group">
+                  <input type="checkbox" id="invite-2" name="intrest[]" value="2" />
+                  <label for="invite-2" >Meio Ambiente</label>
+                </div>
+                <div class="input-group">
+                  <input type="checkbox" id="invite-3" name="intrest[]" value="3" />
+                  <label for="invite-3" >Saúde</label>
+                </div>
+                <div class="input-group">
+                  <input type="checkbox" id="invite-4" name="intrest[]" value="4" />
+                  <label for="invite-4" >Portadores de Necessidades Especiais</label>
+                </div>
+                <div class="input-group">
+                  <input type="checkbox" id="invite-5" name="intrest[]" value="5" />
+                  <label for="invite-5" >Voluntário</label>
+                </div>
+                <div class="input-group">
+                  <input type="checkbox" id="invite-6" name="intrest[]" value="6" />
+                  <label for="invite-6" >Programa Social</label>
+                </div>
+                <div class="input-group">
+                  <input type="checkbox" id="invite-7" name="intrest[]" value="7" />
+                  <label for="invite-7" >Educacional | Profissionalizante</label>
+                </div>
+                <div class="input-group">
+                  <input type="checkbox" id="invite-8" name="intrest[]" value="8" />
+                  <label for="invite-8" >Outros</label>
+                  <input type="text" name="others" placeholder="Quais outros?" class="hidden" style="padding-left: 10px">
+                </div>
+              </fieldset>
+
+              <h4> <i class="fa fa-share-alt"></i> Redes Sociais da Instituição </h4>
+              <div class="input-addon">
+                <i class="fa fa-facebook"></i>
+                <input type="text" name="facebook" placeholder="Facebook">
+              </div>
+              <div class="input-addon">
+                <i class="fa fa-instagram"></i>
+                <input type="text" name="instagram" placeholder="Instagram">
+              </div>
+          </div>
+          </div>
+          <div class="row text-center">
+            <button type="submit"> Enviar Cadastro </button>
+            <div class="response">
+<h2></h2><span></span>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div data-tab-index="3" class="contents">
+        <h2>Espalhe as boas iniciativas pela rede</h2>
+        <p>Uma das formas mais simples de ajudar uma ação do bem é espalhar a ideia! Você pode divulgar todas as ações ligadas à causa que você mais se identifica. </p>
+        <p>Ficou sabendo de uma ação do bem e quer espalhar?</p>
+        <p>Cadastre-se e faça parte da maior rede colaborativa do país.</p>
+        <form class="tabform" action="/register/spread" method="post" accept-charset="utf8">
+          <?php echo $form->render("security"); ?>
+          <div class="columns">
+            <div class="column">
+              <div class="input-addon">
+                <i class="fa fa-user"></i>
+                <input class="required" type="text" name="name" placeholder="Nome Completo">
+              </div>
+              <div class="input-addon">
+                <i class="fa fa-envelope-o"></i>
+                <input class="required" type="text" name="email" placeholder="E-Mail">
+              </div>
+              <div class="input-addon">
+                <i class="fa fa-phone"></i>
+                <input class="required" type="text" name="phone" placeholder="Telefone">
+              </div>
+              <div class="input-addon">
+                <i class="fa fa-info"></i>
+                <input type="text" name="document" placeholder="CPF">
+              </div>
+              <div class="input-addon">
+                <i class="fa fa-map-marker"></i>
+                <input type="text" name="address" placeholder="Endereço Completo">
+              </div>
+              <fieldset style="">
+                <legend><h4><i class="fa fa-support"></i> Como gostaria de ajudar?</h4></legend>
+                <div class="input-group">
+                  <input type="checkbox" id="support-1" name="support[]" value="1" />
+                  <label for="support-1">Doação</label>
+                </div>
+                <div class="input-group">
+                  <input type="checkbox" id="support-2" name="support[]" value="2" />
+                  <label for="support-2">Voluntariado</label>
+                </div>
+              </fieldset>
+
+            </div>
+            <div class="column">
+              <fieldset>
+                <legend><h4><i class="fa fa-key"></i> Escolha a causa de seu interesse: <small>* Multipla escolha</small></h4></legend>
+                <div class="input-group">
+                  <input type="checkbox" id="spread-1" name="intrest[]" value="1" />
+                  <label for="spread-1" >Proteção Animal</label>
+                </div>
+                <div class="input-group">
+                  <input type="checkbox" id="spread-2" name="intrest[]" value="2" />
+                  <label for="spread-2" >Meio Ambiente</label>
+                </div>
+                <div class="input-group">
+                  <input type="checkbox" id="spread-3" name="intrest[]" value="3" />
+                  <label for="spread-3" >Saúde</label>
+                </div>
+                <div class="input-group">
+                  <input type="checkbox" id="spread-4" name="intrest[]" value="4" />
+                  <label for="spread-4" >Portadores de Necessidades Especiais</label>
+                </div>
+                <div class="input-group">
+                  <input type="checkbox" id="spread-5" name="intrest[]" value="5" />
+                  <label for="spread-5" >Voluntário</label>
+                </div>
+                <div class="input-group">
+                  <input type="checkbox" id="spread-6" name="intrest[]" value="6" />
+                  <label for="spread-6" >Programa Social</label>
+                </div>
+                <div class="input-group">
+                  <input type="checkbox" id="spread-7" name="intrest[]" value="7" />
+                  <label for="spread-7" >Educacional | Profissionalizante</label>
+                </div>
+                <div class="input-group">
+                  <input type="checkbox" id="spread-8" name="intrest[]" value="8" />
+                  <label for="spread-8" >Outros</label>
+                  <input type="text" name="others" placeholder="Quais outros?" class="hidden" style="padding-left: 10px">
+                </div>
+              </fieldset>
+
+              <h4> <i class="fa fa-share-alt"></i> Redes Sociais da Instituição ou Campanha</h4>
+              <div class="input-addon">
+                <i class="fa fa-facebook"></i>
+                <input type="text" name="facebook" placeholder="Facebook">
+              </div>
+              <div class="input-addon">
+                <i class="fa fa-instagram"></i>
+                <input type="text" name="instagram" placeholder="Instagram">
+              </div>
+          </div>
+          </div>
+          <div class="row text-center">
+            <button type="submit"> Enviar Cadastro </button>
+            <div class="response">
+<h2></h2><span></span>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div data-tab-index="4" class="contents">
+        <h2>Apoie uma causa participando da rede</h2>
+        <p>
+          O maior benefício que a Mais Um pode proporcionar é a participar de uma grande experiência de vida. Queremos somar/unir pessoas e istituições para espalhar ações do bem e mudar o mundo!
+        </p>
+        <p>
+          Se você adora ajudar, busca fazer o bem e quer melhorar o mundo, venha fazer parte da maior rede colaborativa do Brasil.
+        </p>
+        <div class="social-feed">
+          <div class="facebook-feed">
+            <div class="fb-page" data-height="530"  data-href="https://www.facebook.com/redemaisum/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false">
+              <div class="fb-xfbml-parse-ignore">
+                <blockquote cite="https://www.facebook.com/redemaisum/"><a href="https://www.facebook.com/redemaisum/">Mais Um</a></blockquote>
+              </div>
+            </div>
+          </div>
+          <div class="instagram-feed">
+            <div class="header">
+              <h3>redemaisum</h3>
+            </div>
+            <div class="bio">
+              <div class="left">
+                <img src="//placehold.it/200" alt="" />
+                <h4>1234 <span>posts</span> </h4>
+                <h4>1234 <span>seguidores</span> </h4>
+              </div>
+              <div class="right">
+                <div class="text">
+                  Rede Mais 1 A Mais Um é uma rede colaborativa que tem por objetivo reunir pessoas e empresas que têm vontade de mudar o mundo.
+                </div>
+                <a href="#" class="url"> www.maisum.social </a>
+              </div>
+            </div>
+            <div class="photos">
+              <img src="//placehold.it/200" alt="" />
+              <img src="//placehold.it/200" alt="" />
+              <img src="//placehold.it/200" alt="" />
+              <img src="//placehold.it/200" alt="" />
+              <img src="//placehold.it/200" alt="" />
+              <img src="//placehold.it/200" alt="" />
+            </div>
+          </div>
+          <div class="twitter-feed">
+            <a class="twitter-timeline" href="https://twitter.com/redemais1" data-widget-id="730814507614908416">Tweets de @redemais1</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.6&appId=804353492961247";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>

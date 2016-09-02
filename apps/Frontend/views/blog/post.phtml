@@ -1,0 +1,47 @@
+<div class="container">
+
+  <div class="blog-post">
+    <h2 class="title"><?php echo $post->title; ?></h2>
+    <figure>
+      <img src="/assets/public/images/blog/<?php echo $post->image; ?>" alt="<?php echo $post->title; ?>" />
+    </figure>
+    <span><?php echo $post->text; ?></span>
+    <hr class="divide">
+    <div class="social-wrap">
+      <h2 class="title thin"> Compartilhe !</h2>
+      <ul class="social">
+        <li><a href="https://www.facebook.com/sharer/sharer.php?t=<?php echo $post->title; ?>&u=http://<?=$this->request->getHttpHost().$this->request->getURI();?>"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="https://twitter.com/home?status=Veja ! http://<?=$this->request->getHttpHost().$this->request->getURI();?>"><i class="fa fa-twitter"></i></a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="blog-comments">
+    <h2 class="title"> Comente !</h2>
+    <form action="/blog/comment/<?php echo $post->urlrequest; ?>" method="post" accept-charset="utf8" class="comment">
+      <?php echo $form->render('security'); ?>
+      <div class="content">
+        <div class="box">
+          <div class="input-addon"><i class="fa fa-user"></i>
+            <?php echo $form->render('name'); ?>
+          </div>
+          <div class="input-addon"><i class="fa fa-comment"></i>
+            <?php echo $form->render('comment'); ?>
+          </div>
+        </div>
+      </div>
+      <div id="response">
+        <h2></h2><span></span>
+      </div>
+      <button type="submit">Enviar</button>
+    </form>
+
+    <?php foreach($comments as $comment): ?>
+    <blockquote>
+      <h3><?php echo $comment->name;?> <small><?php echo (new \DateTime($comment->date))->format("d/m/Y \a\s H:i:s");?></small> </h3>
+      <p><?php echo $comment->text;?></p>
+    </blockquote>
+    <?php endforeach;?>
+  </div>
+
+</div>

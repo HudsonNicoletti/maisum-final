@@ -1,0 +1,15 @@
+<div class="container">
+
+  <?php foreach($posts as $post): ?>
+  <div class="blog-post">
+    <h2 class="title"><?php echo $post->title; ?></h2>
+    <figure>
+      <img src="/assets/public/images/blog/<?php echo $post->image; ?>" alt="" />
+    </figure>
+    <span><?php echo substr(strip_tags($post->text),0,355); ?> ...</span>
+    <a href="/blog/<?php echo $post->urlrequest; ?>">
+      <button type="button" class="cta"> Continue Lendo </button>
+    </a>
+  </div>
+  <?php endforeach;?>
+</div>

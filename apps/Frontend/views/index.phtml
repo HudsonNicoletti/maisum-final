@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="rede,coloaborativa,maisum,brasil,londrina,caridade">
+
+    <meta name="description" content="<?php echo $ogdescription; ?>">
+    <meta name="author" content="<?php echo $ogauthor; ?>">
+    <meta property="og:title" content="<?php echo $ogtitle; ?>" />
+    <meta property="og:description" content="<?php echo $ogdescription; ?>" />
+    <meta property="og:image" content="<?php echo @$ogimage; ?>" />
+    <meta property="og:url" content="<?php echo @$ogurl; ?>" />
+
+    <title><?php echo $ogtitle; ?></title>
+    <?php echo $this->assets->outputCss(); ?>
+    <link rel="shortcut icon" href="/favicon.ico">
+  </head>
+  <body class="home">
+    <header data-scroll-index="1">
+      <div class="main-section">
+        <div class="logo"></div>
+        <div class="social">
+          <a href="https://www.facebook.com/redemaisum/" target="_blank" ><i class="fa fa-facebook"></i></a>
+          <a href="https://twitter.com/redemais1" target="_blank" ><i class="fa fa-twitter"></i></a>
+          <a href="https://www.youtube.com/channel/UC9f3AXV4wuYUgI6gU8hcy0w" target="_blank" ><i class="fa fa-youtube-play"></i></a>
+          <a href="https://www.instagram.com/redemaisum/" target="_blank" ><i class="fa fa-instagram"></i></a>
+        </div>
+      </div>
+      <nav>
+        <div class="menu-logo"></div>
+        <div class="menu-toggle"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+        <ul>
+          <?php  if( $this->router->getControllerName() === 'sobre' ): ?>
+
+          <li><a href="/">Home</a></li>
+          <li data-scroll-nav="1"><a href="/sobre">Sobre</a></li>
+          <li data-scroll-nav="2"><a href="/">Contato</a></li>
+          <li><a href="/blog">Blog</a></li>
+
+          <?php  elseif( $this->router->getControllerName() === 'blog' ): ?>
+
+          <li><a href="/">Home</a></li>
+          <li><a href="/sobre">Sobre</a></li>
+          <li data-scroll-nav="2"><a href="/">Contato</a></li>
+          <li data-scroll-nav="1"><a href="/blog">Blog</a></li>
+
+          <?php  else: ?>
+
+          <li data-scroll-nav="1"><a href="/">Home</a></li>
+          <li><a href="/sobre">Sobre</a></li>
+          <li data-scroll-nav="2"><a href="/">Contato</a></li>
+          <li><a href="/blog">Blog</a></li>
+
+          <?php  endif; ?>
+        </ul>
+      </nav>
+    </header>
+
+    <?php echo $this->getContent(); ?>
+
+    <section data-scroll-index="2" class="contact">
+      <div class="header">
+        <div class="container">
+          <h2 class="title">Entre em Contato</h2>
+        </div>
+      </div>
+      <div class="container">
+        <div class="info-box">
+          <div class="info"><i class="fa fa-phone"></i><span>( 43 ) 3341.7289 </span></div>
+          <div class="info"><i class="fa fa-envelope-o"></i><span>contato@maisum.social</span></div>
+        </div>
+        <form action="/contact" method="post" accept-charset="utf8" class="contact">
+          <?php echo $form->render('security'); ?>
+          <div class="content">
+            <div class="box">
+              <div class="input-addon"><i class="fa fa-user"></i>
+                <input type="text" name="name" placeholder="Nome Completo">
+              </div>
+              <div class="input-addon"><i class="fa fa-envelope-o"></i>
+                <input type="email" name="email" placeholder="E-Mail">
+              </div>
+              <div class="input-addon"><i class="fa fa-volume-up"></i>
+                <input type="text" name="subject" placeholder="Assunto">
+              </div>
+            </div>
+            <div class="box">
+              <div class="input-addon"><i class="fa fa-pencil"></i>
+                <textarea name="message" placeholder="Mensagem"></textarea>
+              </div>
+            </div>
+          </div>
+          <div id="response">
+            <h2>title</h2><span> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, fuga?</span>
+          </div>
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="newsletter"><img src="/assets/public/images/logo/alt.png" alt="Mais Um"/>
+          <form action="/newsletter" method="post" class="signup" accept-charset="utf8">
+            <?php echo $form->render('security'); ?>
+            <input type="text" placeholder="Seu E-Mail" name="email"/>
+            <button type="submit">Fique Atualizado !</button>
+            <div id="newsResponse"><h2>title</h2><span> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, fuga?</span></div>
+          </form>
+        </div>
+        <div class="social">
+          <a href="https://www.facebook.com/redemaisum/" target="_blank" ><i class="fa fa-facebook"></i></a>
+          <a href="https://twitter.com/redemais1" target="_blank" ><i class="fa fa-twitter"></i></a>
+          <a href="https://www.youtube.com/channel/UC9f3AXV4wuYUgI6gU8hcy0w" target="_blank" ><i class="fa fa-youtube-play"></i></a>
+          <a href="https://www.instagram.com/redemaisum/" target="_blank" ><i class="fa fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="copyright">
+        <div class="container">
+          <p>&copy; Rede MaisUm - Todos os direitos reservados - 2016</p><a href="http://www.agenciadzoe.com.br" class="developer"><img src="http://www.agenciadzoe.com.br/assets/public/images/logo.png" alt="Agência dZoë" height="30"/></a>
+        </div>
+      </div>
+    </footer>
+    <div class="scroll-top"><a href="#"><i class="fa fa-chevron-up"></i></a></div>
+
+    <?php echo $this->assets->outputJs(); ?>
+  </body>
+</html>
